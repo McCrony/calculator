@@ -23,7 +23,14 @@
 
 form .display{
     display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 2rem;
     margin-bottom: 10px;
+    height: 15vh;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
 }
 
 .display input{

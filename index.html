@@ -12,14 +12,13 @@
       <div class="calculator">
         <form>
           <div class="display">
-            <input type="text" />
-            <div class="result"></div>
+            <!-- <input type="text" class="displayInput"/> -->
           </div>
           <div>
-            <input type="button" value="7" />
-            <input type="button" value="8" />
-            <input type="button" value="9" />
-            <input type="button" value="X" />
+            <input type="button" class="button" value="7" />
+            <input type="button" class="button" value="8" />
+            <input type="button" class="button" value="9" />
+            <input type="button" class="button" value="*" />
           </div>
           <div>
             <input type="button" value="4" />
@@ -47,5 +46,11 @@
         </form>
       </div>
     </div>
+
+    <rect>
+      <animate attributeName="opacity"
+             from="1" to="0" dur="5s" repeatCount="indefinite" />
+    </rect>
+    
   </body>
 </html>
