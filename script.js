@@ -58,37 +58,18 @@ buttons.forEach(button => {
   });
 });
 
-
 function operate(operator, previousInput, currentInput) {
   switch (operator) {
     case '+':
-      return Addition(previousInput, currentInput);
+      return (previousInput + currentInput);
     case '-':
-      return subtraction(previousInput, currentInput);
+      return (previousInput - currentInput);
     case '*':
-      return Multiplication(previousInput, currentInput);
+      return (previousInput * currentInput);
     case '/':
-      return division(previousInput, currentInput);
+      if (currentInput === 0) return "Error"; // Prevent division by zero
+      return (previousInput / currentInput);
     default:
       return currentInput;
   }
-}
-
-function Addition(previousInput, currentInput){
-return previousInput + currentInput
-}
-
-function subtraction(previousInput, currentInput){
-  return previousInput - currentInput;
-}
-
-function division(previousInput, currentInput){
-  if (currentInput === 0) {
-    return "Error";
-  }
-  return previousInput / currentInput;
-}
-
-function Multiplication(previousInput, currentInput){
-  return previousInput * currentInput;
 }
