@@ -10,6 +10,10 @@ let buttons = document.querySelectorAll('input[type="button"]');
 // Function to update the display
 function updateDisplay() {
   display.textContent = currentInput;
+
+  if(display.textContent.length > 13) {
+    display.textContent = display.textContent.substring(0, 13);
+}
 }
 
 // Handle number button clicks
@@ -79,14 +83,12 @@ function subtraction(previousInput, currentInput){
 }
 
 function division(previousInput, currentInput){
+  if (currentInput === 0) {
+    return "Error";
+  }
   return previousInput / currentInput;
 }
 
 function Multiplication(previousInput, currentInput){
   return previousInput * currentInput;
 }
-
-function percentage(previousInput, currentInput){
-  return (previousInput/100) * currentInput;
-}
-
