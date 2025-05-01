@@ -32,12 +32,13 @@ buttons.forEach(button => {
         currentInput = previousInput; 
         updateDisplay();
 
-        // Prevent operator without a number
-        if (currentInput === ""){
-          alert('Enter a number first');
-          return
-        }
       } 
+      
+      // Prevent operator without a number
+      if (currentInput === ""){
+        alert('Enter a number first');
+        return
+      }
 
       if (isResult) {
         previousInput = currentInput;
@@ -62,7 +63,7 @@ buttons.forEach(button => {
     }
     
     // Handle clear button
-    if (button.value === "C") {
+    if (button.value === "AC") {
       currentInput = "";
       previousInput = "";
       operator = "";
