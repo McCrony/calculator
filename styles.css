@@ -5,23 +5,26 @@
     box-sizing: border-box;
 }
 
-.container{
-    width: 100%;
+.body{
+    width: 100vw;
     height: 100vh;
-    background: rgb(3, 54, 56);
+}
+
+.container{
+    background: none;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 div.info{
     color: white;
-    width: vw;
     font-family:'Times New Roman', Times, serif;
-    background-color: rgba(73, 103, 202, 0.178);
+    background-color: rgb(2, 80, 2);
     padding: 10px;
+    margin-top: 20px;
     border-radius: 5px;
     border-left: 5px solid rgb(117, 13, 13);
     animation: blink 5s infinite;
@@ -32,7 +35,7 @@ div.info{
 }
 
 .info h3, p{
-    margin-bottom: 10px;
+    margin: 1px 0px;
 }
 
 .calculator{
