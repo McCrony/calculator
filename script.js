@@ -6,7 +6,18 @@ let isResult = false
 
 let display = document.querySelector('.display');
 let buttons = document.querySelectorAll('input[type="button"]');
+let info = document.querySelector('.info');
+let heading = document.createElement('h3');
+let firstPara = document.createElement('p');
+let secondPara = document.createElement('p');
 
+heading.textContent = "Welcome, User";
+firstPara.textContent = "This is a simple calculator that accepts two operands and an operator!";
+secondPara.textContent = "Click on an operand, followed by an operator and an operand.";
+
+info.appendChild(heading);
+info.appendChild(firstPara);
+info.appendChild(secondPara);
 
 // Handle number button clicks
 buttons.forEach(button => {
