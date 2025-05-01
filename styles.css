@@ -86,16 +86,6 @@ form div .clear:hover{
     background: rgb(129, 11, 11);
 }
 
-.delete{
-    background: black;
-    color: white;
-}
-
-form div .delete:hover{
-    background: rgb(49, 45, 45);
-    color: white;
-}
-
 form div.equal-container{
    display: flex;
 
