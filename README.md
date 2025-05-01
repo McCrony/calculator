@@ -15,4 +15,4 @@ A basic web-based calculator for addition, subraction, multiplication and divisi
 
 ## HTML | CSS | JAVASCRIPT
 
-Live: 
+Live: https://mccrony.github.io/calculator/
