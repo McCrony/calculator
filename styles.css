@@ -72,8 +72,8 @@ form .display{
     background: rgb(179, 171, 171);
 }
 
-.clicked{
-    background:rgb(194, 21, 21)
+.operator:focus{
+    background: rgb(179, 171, 171);
 }
 
 .clear{

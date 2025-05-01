@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator - McCrony</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <script src="/script.js" defer></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="info">
-        <h3>Welcome, User</h6>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator - McCrony</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/script.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="info">
+      <h3>Welcome, User</h6>
         <p>This is a simple calculator that accepts two operands and an operator!
         </p>
         <p>Click on an operand, followed by an operator and an operand.</p>
-      </div>
-      <div class="calculator">
-        <form>
-          <div class="display">
-         
-          </div>
-          <div>
-            <input type="button" class="button" value="7" />
-            <input type="button" class="button" value="8" />
-            <input type="button" class="button" value="9" />
-            <input type="button" class="button" value="*" />
-          </div>
-          <div>
-            <input type="button" value="4" />
-            <input type="button" value="5" />
-            <input type="button" value="6" />
-            <input type="button" value="-" />
-          </div>
-          <div>
-            <input type="button" value="1" />
-            <input type="button" value="2" />
-            <input type="button" value="3" />
-            <input type="button" value="+" />
-          </div>
-         
-          <div style="display: flex;">
-            <input type="button" class="clear" value="C" />
-            <input type="button" value="0" />
-            <input type="button" value="/" />
-          </div>
-
-          <div class="equal-container">
-            <input type="button" class="equal" value="=" />
-          </div>
-        </form>
-      </div>
     </div>
+    <div class="calculator">
+      <form>
+        <div class="display">
 
-    <rect>
-      <animate attributeName="opacity"
-             from="1" to="0" dur="5s" repeatCount="indefinite" />
-    </rect>
-    
-  </body>
+        </div>
+        <div>
+          <input type="button" value="7" />
+          <input type="button" value="8" />
+          <input type="button" value="9" />
+          <input type="button" class=" operator" value="*" />
+        </div>
+        <div>
+          <input type="button" value="4" />
+          <input type="button" value="5" />
+          <input type="button" value="6" />
+          <input type="button" class=" operator" value="-" />
+        </div>
+        <div>
+          <input type="button" value="1" />
+          <input type="button" value="2" />
+          <input type="button" value="3" />
+          <input type="button" class=" operator" value="+" />
+        </div>
+
+        <div style="display: flex;">
+          <input type="button" class="clear" value="C" />
+          <input type="button" value="0" />
+          <input type="button" class=" operator" value="/" />
+        </div>
+
+        <div class="equal-container">
+          <input type="button" class="equal" value="=" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <rect>
+    <animate attributeName="opacity" from="1" to="0" dur="5s" repeatCount="indefinite" />
+  </rect>
+
+</body>
+
 </html>
