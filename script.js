@@ -1,28 +1,19 @@
 // Declare variables
-let currentInput = ""; // This will store the current number being input by the user
-let previousInput = ""; // This will store the first number before operator is pressed
-let operator = ""; // Store the operator (+, -, *, /)
+let currentInput = ""; 
+let previousInput = ""; 
+let operator = ""; // Operators (+, -, *, /)
 let isResult = false
 
 let display = document.querySelector('.display');
 let buttons = document.querySelectorAll('input[type="button"]');
 
 
-// Function to update the display
-function updateDisplay() {
-  display.textContent = currentInput;
-
-  if(display.textContent.length > 13) {
-    display.textContent = display.textContent.substring(0, 13);
-}
-}
-
 // Handle number button clicks
 buttons.forEach(button => {
   button.addEventListener("click", (e) => {
     const value = button.value;  
+    
     // If the value is a number, add it to the current input
-     
     if (button.value >= '0' && button.value <= '9') {
       if (isResult) {
         currentInput = value; // Start fresh after result
@@ -35,17 +26,23 @@ buttons.forEach(button => {
     
     // If an operator is pressed, store the current input and the operator
     if (button.value === "+" || button.value === "-" || button.value === "*" || button.value === "/") {
-      if (currentInput === ""){
-        alert('Enter a number first');
-        return
-      }
-    updateDisplay();
-    // Prevent operator without a number
+      if (previousInput !== "") {
+        operator = value;  
+        currentInput = previousInput; 
+        updateDisplay();
+
+        // Prevent operator without a number
+        if (currentInput === ""){
+          alert('Enter a number first');
+          return
+        }
+      } 
+
       if (isResult) {
         previousInput = currentInput;
-        isResult = false; // Reset result flag
+        isResult = false;
       }else{
-        previousInput = currentInput
+        previousInput = currentInput;
       }
       operator = value;
       currentInput = "";
@@ -59,8 +56,8 @@ buttons.forEach(button => {
       currentInput = operate(operator, parseFloat(previousInput), parseFloat(currentInput)).toString();
       updateDisplay();
       isResult = true;
-      previousInput = ""; // Reset previous input
-      operator = ""; // Reset operator
+      previousInput = "";
+      operator = "";
     }
     
     // Handle clear button
@@ -73,6 +70,7 @@ buttons.forEach(button => {
   });
 });
 
+//Function to handle operations
 function operate(operator, previousInput, currentInput) {
   switch (operator) {
     case '+':
@@ -82,7 +80,7 @@ function operate(operator, previousInput, currentInput) {
     case '*':
       return (previousInput * currentInput);
     case '/':
-      if (currentInput === 0) return "Error"; // Prevent division by zero
+      if (currentInput === 0) return "Error";
       return (previousInput / currentInput);
     default:
       return currentInput;
@@ -90,14 +88,11 @@ function operate(operator, previousInput, currentInput) {
 }
 
 
-function updateOperator(){
-  if (previousInput !== "" ) {
-    operator = value;  // Update operator
-    currentInput = ""; // Reset current input to start new number input
-  } else {
-    // If there's no previous input, set the previous input to the current input
-    previousInput = currentInput;
-    operator = value;  // Set the operator
-    currentInput = ""; // Reset current input
-  }
+// Function to update the display
+function updateDisplay() {
+  display.textContent = currentInput ;
+
+  if(display.textContent.length > 13) {
+    display.textContent = display.textContent.substring(0, 13);
+}
 }
