@@ -26,7 +26,7 @@ buttons.forEach(button => {
     
     // If an operator is pressed, store the current input and the operator
     if (button.value === "+" || button.value === "-" || button.value === "*" || button.value === "/") {
-      buttonClicked();
+
       if (previousInput !== "") {
         operator = value;  
         currentInput = previousInput; 
