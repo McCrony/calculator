@@ -2,6 +2,7 @@
 let currentInput = ""; // This will store the current number being input by the user
 let previousInput = ""; // This will store the first number before operator is pressed
 let operator = ""; // Store the operator (+, -, *, /)
+let isResult = false
 
 let display = document.querySelector('.display');
 let buttons = document.querySelectorAll('input[type="button"]');
@@ -23,7 +24,12 @@ buttons.forEach(button => {
     // If the value is a number, add it to the current input
      
     if (button.value >= '0' && button.value <= '9') {
-      currentInput += value;
+      if (isResult) {
+        currentInput = value; // Start fresh after result
+        isResult = false; // Reset result flag
+      }else {
+        currentInput += value;
+      }
       updateDisplay();
     }
     
@@ -32,11 +38,19 @@ buttons.forEach(button => {
       if (currentInput === ""){
         alert('Enter a number first');
         return
-      } // Prevent operator without a number
-      previousInput = currentInput;
+      }
+    updateDisplay();
+    // Prevent operator without a number
+      if (isResult) {
+        previousInput = currentInput;
+        isResult = false; // Reset result flag
+      }else{
+        previousInput = currentInput
+      }
       operator = value;
       currentInput = "";
     }
+    
     
     // If equals button is pressed, perform the operation
     if (button.value === "=") {
@@ -44,6 +58,7 @@ buttons.forEach(button => {
       
       currentInput = operate(operator, parseFloat(previousInput), parseFloat(currentInput)).toString();
       updateDisplay();
+      isResult = true;
       previousInput = ""; // Reset previous input
       operator = ""; // Reset operator
     }
@@ -71,5 +86,18 @@ function operate(operator, previousInput, currentInput) {
       return (previousInput / currentInput);
     default:
       return currentInput;
+  }
+}
+
+
+function updateOperator(){
+  if (previousInput !== "" ) {
+    operator = value;  // Update operator
+    currentInput = ""; // Reset current input to start new number input
+  } else {
+    // If there's no previous input, set the previous input to the current input
+    previousInput = currentInput;
+    operator = value;  // Set the operator
+    currentInput = ""; // Reset current input
   }
 }
