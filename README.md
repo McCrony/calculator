@@ -13,6 +13,7 @@ A basic web-based calculator for addition, subraction, multiplication and divisi
 3. Enter a second number
 4. Click equal to (=) button to perform the operation.
 
+## --
 ## HTML | CSS | JAVASCRIPT
 
 Live: https://mccrony.github.io/calculator/
